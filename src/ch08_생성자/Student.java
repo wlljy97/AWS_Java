@@ -8,7 +8,7 @@ public class Student {
 		String address;
 		
 //		Student() {
-//			name = ""; // final이 와서 초기화를 꼭 시켜 줘야한다.!  기본생성자를 없애야 한다.
+//			name = ""; // final이 오면 초기화를 꼭 시켜 줘야한다.!  기본생성자를 없애야 한다.
 //			System.out.println("NoArgsconstructor"); // 기본 생성자
 //			System.out.println("학생 한명을 생성합니다.");
 //		}

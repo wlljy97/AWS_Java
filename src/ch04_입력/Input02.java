@@ -25,6 +25,7 @@ public class Input02 {
 		 * 
 		 */
 		
+		// 초기화 값
 		String name = "";
 		int age = 0;
 		String phone = "";
