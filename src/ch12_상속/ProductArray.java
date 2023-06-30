@@ -15,7 +15,9 @@ public class ProductArray {
 			System.out.println("모델명 : " + products[i].getModel());
 			System.out.println("가격 : " + products[i].getPrice());
 			
-			// instanceof : 
+			// instanceof : - instanceof는 객체 타입을 확인하는 연산자이다.
+			//				형변환 가능 여부를 확인하며 true / false로 결과를 반환한다.
+			//				주로 상속 관계에서 부모객체인지 자식 객체인지 확인하는 데 사용된다.
 			
 			if(products[i] instanceof Computer) {
 				System.out.println("컴퓨터임");

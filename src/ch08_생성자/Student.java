@@ -23,7 +23,7 @@ public class Student {
 //		NoArgsconstructor 와 RequiredArgsConstructor 같이 나올 수 없다 둘중 한가지만 나와야 한다.
 		
 		Student(String name){
-			System.out.println("RequiredArgsConstructor"); // 필수 생성자
+			System.out.println("RequiredArgsConstructor"); // 필수 값 생성자
 			this.name = name;
 //			this.age = age;
 //			this.address = address;

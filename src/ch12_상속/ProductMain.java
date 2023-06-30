@@ -9,15 +9,10 @@ public class ProductMain {
 		
 		Product product = computer;
 		
-//		Product product2 = clothes;
-		
 		Computer computer2 = (Computer) product;
-		
-//		Clothes clothes2 = (Clothes) product2;
 		
 		System.out.println(computer2.getType());
 		
-//		System.out.println();
 		
 	}
 }
