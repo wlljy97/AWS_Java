@@ -22,7 +22,7 @@ public class Variable {
 			boolean flag; // 선언
 			flag = true;  // 초기화(대입)
 			System.out.println("FLAG: " + flag);
-			System.out.print("FLAG:");
+			System.out.print("FLAG: ");
 			System.out.println(flag);
 			
 			char lastName = '김'; // 문자
