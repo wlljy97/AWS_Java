@@ -27,13 +27,12 @@ public class AMain {
 		System.out.println("==============================");
 		
 		a.test1();
-		a.test2(1, 2);
+		a.test2(3, 4);
 		
 		a.test3();
 		a2.test3();
 		
 		a3.test4();
-		a2.test3();
 		
 	}
 }

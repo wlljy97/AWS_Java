@@ -5,22 +5,25 @@ public class For03 {
 	public static void main(String[] args) {
 		
 		// 반복문 안의 반복문 // i 부터 시작하는이유는 index 첫자를 따서 i로 시작
-//		for (int i = 0; i < 5; i++) { // 0 1 2 3 4
-//			
-//			for (int j = 0; j < i + 1; j++) { // 1 2 3 4 5
-//				System.out.print("*");
-//				
-//			}
-//			System.out.println();
-//		}
+		for (int i = 0; i < 5; i++) { // 0 1 2 3 4
+			
+			for (int j = 0; j < i + 1; j++) { // 1 2 3 4 5
+				System.out.print("*");
+				
+			}
+			System.out.println();
+		}
+		System.out.println("====================================");
 		
-//		for (int i = 0; i < 5; i++) {
-//			
-//			for (int j = 0; j < 5 - i; j++) {
-//				System.out.print("*");
-//			}
-//			System.out.println();
-//		}
+		for (int i = 0; i < 5; i++) {
+			
+		for (int j = 0; j < 5 - i; j++) {
+			System.out.print("*");
+			}
+			System.out.println();
+		}
+		
+		System.out.println("====================================");
 		
 		for(int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5 - 1 - i; j++) {
@@ -32,6 +35,7 @@ public class For03 {
 			}
 			System.out.println();
 		}
+		
 		System.out.println("==============================================");
 		
 		for (int i = 0; i < 10; i++) {
