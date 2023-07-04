@@ -5,6 +5,7 @@ package ch14_싱글톤;
 // '어디서나' 이 객체를 쉽게 사용 하겠다.
 // static 을 이용
 // 디자인 패턴 중에 생성패턴
+// 비즈니스 로직
 
 public class Galaxy {
 	private int serialNumber;

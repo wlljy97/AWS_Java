@@ -6,7 +6,7 @@ public class CustomerArrayMain {
 		
 		customers[0] = new Customer("김준일", "Gold");
 		customers[1] = new Customer("이동헌", "Silver");
-		customers[2] = new Customer("문근해", "Vip");
+		customers[2] = new Customer("문근해", "VIP");
 		
 		for (int i = 0 ; i < customers.length; i++) {
 			if(customers[i] == null) {

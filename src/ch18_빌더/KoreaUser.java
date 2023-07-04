@@ -1,5 +1,5 @@
 package ch18_빌더;
-
+// ntt
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

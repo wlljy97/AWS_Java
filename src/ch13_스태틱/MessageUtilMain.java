@@ -1,6 +1,5 @@
 package ch13_스태틱;
 
-
 public class MessageUtilMain {
 
 	private int a;

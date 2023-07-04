@@ -6,7 +6,7 @@ package ch09_접근지정자;
 		private String name;
 		private int age;
 		
-		// test() : 클래스 내에서만 사용한다.
+		
 		private void test() {
 			System.out.println("테스트 메소드 호출");
 		}

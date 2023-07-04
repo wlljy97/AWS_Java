@@ -4,13 +4,15 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public class Samsung {
-	private static Samsung instance; // instanace 에 Samsung 객체를 가질수 있다 static 변수
+	private static Samsung instance; 
+	// instanace 에 Samsung 객체를 가질수 있다 static 변수
 	
 	private String companyName;
 	private int autoIncrementSerialNumber = LocalDate.now().getYear() * 10000;
 	
 	private Samsung() {
-		companyName = "SAMSUNG"; // "SAMSUNG"; 을 Samsung.class.getSimpleName().toUpperCase();로 나타낼수 있다. 생성자는 private 여야 한다.
+		companyName = "SAMSUNG"; 
+		// "SAMSUNG"; 을 Samsung.class.getSimpleName().toUpperCase();로 나타낼수 있다. 생성자는 private 여야 한다.
 		
 	}
 	
