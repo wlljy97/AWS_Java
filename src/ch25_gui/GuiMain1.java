@@ -67,5 +67,8 @@ public class GuiMain1 extends JFrame {
 		passwordTextField.setBounds(131, 89, 176, 44);
 		contentPane.add(passwordTextField);
 		passwordTextField.setColumns(10);
+		
+		
+		
 	}
 }
