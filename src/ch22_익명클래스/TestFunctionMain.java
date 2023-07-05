@@ -54,10 +54,10 @@ public class TestFunctionMain {
 		String result1 = function4.test(30, "김준일");
 		System.out.println(result1);
 		
-		// Runnable : 실행 때 쓴다.
+		// Runnable : 실행 때 쓴다. 매개변수x, 리턴x
 		Runnable runnable = () -> {
 			System.out.println("매개변수 x, 리턴 x");
-		};
+		}; // {}; 생략가능
 		
 		runnable.run();
 		
@@ -82,7 +82,7 @@ public class TestFunctionMain {
 		Supplier<Integer> supplier = () -> 100;
 		System.out.println(supplier.get());
 		
-		// Function
+		// Function 매개변수 o, 리턴 o
 		Function<Integer, String> function = year -> "생일 : " + year;
 		System.out.println(function.apply(1994));
 		

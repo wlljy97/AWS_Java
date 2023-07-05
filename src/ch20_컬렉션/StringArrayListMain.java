@@ -3,7 +3,7 @@ package ch20_컬렉션;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class StringarrayListMain {
+public class StringArrayListMain {
 	public static void main(String[] args) {
 		CustomArrayList list = new CustomArrayList();
 		

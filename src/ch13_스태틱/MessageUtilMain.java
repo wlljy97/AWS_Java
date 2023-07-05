@@ -17,6 +17,7 @@ public class MessageUtilMain {
 //		messageUtil.sendMail();
 //		messageUtil.sendFile();
 		
+		
 		MessageUtil.sendFile();
 		System.out.println();
 		MessageUtil.data = "안녕";
