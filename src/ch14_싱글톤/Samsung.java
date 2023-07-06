@@ -12,8 +12,7 @@ public class Samsung {
 	
 	private Samsung() {
 		companyName = "SAMSUNG"; 
-		// "SAMSUNG"; 을 Samsung.class.getSimpleName().toUpperCase();로 나타낼수 있다. 생성자는 private 여야 한다.
-		
+		// "SAMSUNG"; 0
 	}
 	
 	public static Samsung getInstance() { //해당 인스턴스를 공유 할 수 있게 getInstance를 만들어야 한다

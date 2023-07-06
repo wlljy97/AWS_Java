@@ -4,7 +4,7 @@ public class ResponseMain {
 	public static void main(String[] args) {
 		
 		Response<String> response1 = new Response<String>(200, "회원가입 성공!!");
-//		System.out.println(response1);
+		System.out.println(response1);
 		
 		SignupUser signupUser = SignupUser.builder()
 				.username("aaa")
@@ -14,7 +14,7 @@ public class ResponseMain {
 				.build();
 		
 		Response<SignupUser> response2 = new Response<SignupUser>(400, signupUser);
-//		System.out.println(response2);
+		System.out.println(response2);
 		
 		AccountUser accountUser = AccountUser.builder()
 				.username("aaa")

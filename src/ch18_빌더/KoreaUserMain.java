@@ -13,7 +13,7 @@ public class KoreaUserMain {
 				.build();
 		
 //		KoreaUser koreaUser2 = new KoreaUser(1, null , null, null, null);
-//		KoreaUser koreaUser3 = new KoreaUser();
+		KoreaUser koreaUser3 = new KoreaUser();
 //		koreaUser3.setUserId(1);
 		
 //		KoreaUser koreaUser = KoreaUser.builder().userId(1).build(); 위랑 같은 것이다.
