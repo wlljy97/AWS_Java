@@ -50,10 +50,10 @@ public class ServerApplication {
 				
 					connectionThread = new Thread(() -> {
 						try {
-							serverSocket = new ServerSocket(port);
+							serverSocket = new ServerSocket(port); // 서버소켓 생성
 							
 							while(!Thread.interrupted()) {
-								Socket socket = serverSocket.accept(); // .accept 클라이언트가 도는 것을 기다림
+								Socket socket = serverSocket.accept(); // .accept 클라이언트 접속 대기
 								System.out.println("접속!!");
 								System.out.println(socket.getInetAddress().getHostAddress());
 						}
@@ -97,6 +97,13 @@ public class ServerApplication {
 				default: // 명령의 제일 끝 부분
 					System.out.println("다시 선택하세요.");
 			}
+				if(serverSocket == null) {
+					try {
+						connectionThread.join(500); // 여기서 500은 0.5초 기다리시오
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
 		}
 	}
 }
