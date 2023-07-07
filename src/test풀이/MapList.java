@@ -1,4 +1,4 @@
-package org.example;
+package test풀이;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,14 +11,16 @@ public class MapList {
 	public static void main(String[] args) {
 		List<Map<String, Object>> customers = new ArrayList<Map<String, Object>>();
 		
-		System.out.println("name = 홍길동");
-		System.out.println("rating = vip");
-		System.out.println("age = 30");
-		System.out.println("name = 김기영");
-		System.out.println("rating = gold");
-		System.out.println("age = 35");
+		Map<String, Object> customer1 = new HashMap<String, Object>();
+		customer1.put("name", "홍길동");
+	
 		
 		for (Map<String, Object> customer : customers){
+			for(Map.Entry<String, Object> entry : customer.entrySet()) {
+				System.out.println(entry);
+			}
+			
+			
 		}
 	}
 }

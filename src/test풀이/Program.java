@@ -1,4 +1,4 @@
-package Test;
+package test풀이;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
