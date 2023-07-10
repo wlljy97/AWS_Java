@@ -1,3 +1,13 @@
++++++++++++++++++++++++++
+
+
+
+
+
+
+
+
+
 package ch26_socket.client;
 
 import java.awt.EventQueue;
@@ -17,15 +27,18 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class ClientApplication extends JFrame {
 
-	private Socket socket;
+	private Socket socket; // Socket을 전역으로 빼둠 // 선언을 위에 해둠
 	
 	private JPanel mainPanel;
 	private JTextField ipTextField;
 	private JTextField portTextField;
 	private JTextField messageTextField;
+	private JButton messageSendButton; // 밑에 선언해준것을 위에 선언 시킴
 
 	/**
 	 * Launch the application.
@@ -79,7 +92,7 @@ public class ClientApplication extends JFrame {
 		connectionButton.addMouseListener(new MouseAdapter() {
 			
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mouseClicked(MouseEvent e) { // MouseEvent e 마우스를 통해서 이벤트를 받음
 				
 				String serverIp = ipTextField.getText();
 				String serverPort = portTextField.getText();
@@ -96,6 +109,13 @@ public class ClientApplication extends JFrame {
 				
 				try {
 					socket = new Socket(serverIp, Integer.parseInt(serverPort));
+					JOptionPane.showMessageDialog(
+							mainPanel,
+							"서버와의 연결에 성공하였습니다.",
+							"접속 완료",
+							JOptionPane.PLAIN_MESSAGE);
+					messageTextField.setEditable(true);
+					messageSendButton.setEnabled(true);
 					
 				} catch (NumberFormatException e1) {
 					e1.printStackTrace();
@@ -122,14 +142,22 @@ public class ClientApplication extends JFrame {
 		
 		// <<< 메세지입력 및 전송 >>>
 		messageTextField = new JTextField();
+		messageTextField.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(e.getKeyCode() == KeyEvent.VK_ENTER) { //enter가 일어났을때 전송을 시키겠다. // .VK_ENTER 상수값 10 ,\n으로 표시 되어있음
+					System.out.println("전송");
+				}
+			}
+		});
 		messageTextField.setBounds(12, 418, 542, 52);
-		messageTextField.setEditable(false); // setEditable 비활성화
+		messageTextField.setEditable(false); // setEditable 비활성화 // false 값을 넣어 입력을 못하게 함
 		mainPanel.add(messageTextField);
 		messageTextField.setColumns(10);
 		
-		JButton messageSendButton = new JButton("전송");
+		messageSendButton = new JButton("전송"); // 선언을 밑에 해둠 // 선언을 위로 다시 두어서 비활성화를 품
 		messageSendButton.setBounds(566, 416, 75, 54);
-		messageSendButton.setEnabled(false); // setEnabled 비활성화
+		messageSendButton.setEnabled(false); // setEnabled 비활성화 
 		mainPanel.add(messageSendButton);
 	}
 }

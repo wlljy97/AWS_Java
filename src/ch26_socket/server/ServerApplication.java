@@ -13,6 +13,7 @@ public class ServerApplication {
 	public static ServerSocket serverSocket;
 	public static int port;
 	
+	
 	public static void main(String[] args) {
 		
 		Thread connectionThread = null;
@@ -34,7 +35,7 @@ public class ServerApplication {
 			}
 			
 			switch(selectedMenu) {
-				case 1:
+				case 1: // 1번을 선택 했을 때
 					if(serverSocket != null) {
 						System.out.println("이미 서버가 실행중입니다.");
 						break;
@@ -50,10 +51,17 @@ public class ServerApplication {
 				
 					connectionThread = new Thread(() -> {
 						try {
-							serverSocket = new ServerSocket(port); // 서버소켓 생성
+							serverSocket = new ServerSocket(port); // 서버소켓 생성, 서버 자신의 포트를 설정해준다. // Thread 에 담음 
 							
 							while(!Thread.interrupted()) {
-								Socket socket = serverSocket.accept(); // .accept 클라이언트 접속 대기
+								Socket socket = serverSocket.accept(); // 여기서 Socket socket 클라이언트와 연결되는 socket
+								ConnectedSocket connectedSocket = new ConnectedSocket(socket); // Thread 객체를 생성 // 해당 socket을 받아서 혼자서 돌게 함
+								connectedSocket.start(); // Thread를 실행 시킴
+								// .accept 클라이언트 접속 대기, 새로운 소켓을 생성 클라이언트가 들어왔을때, 접속했을때 실행되는 구문
+								
+								ConnectedClientController.getInstace()
+								.getConnectedSockets().add(connectedSocket); // List에 추가하여 담아 두겠다.
+								
 								System.out.println("접속!!");
 								System.out.println(socket.getInetAddress().getHostAddress());
 						}

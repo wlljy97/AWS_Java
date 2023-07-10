@@ -42,6 +42,7 @@ public class ThreadTestMain {
 		}, "4번 스레드");
 		
 		thread1.start();
+		
 //		try {
 //			thread1.join(); //       join을 thread 1번 상태가 끝날때 까지 다른 thread가 돌지 않는다.
 //		} catch (InterruptedException e) {
@@ -52,6 +53,6 @@ public class ThreadTestMain {
 //		thread3.start();
 //		thread4.start();
 		
-		// thread 순서대로 동작하지 않는다. 동시에 실행이 된다.
+		// thread는 순서대로 동작하지 않는다. 동시에 실행이 된다.
 	}
 }
