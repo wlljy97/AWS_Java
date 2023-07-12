@@ -81,6 +81,7 @@ public class SimpleGUIClient extends JFrame {
 					RequestBodyDto<String> requestBodyDto = new RequestBodyDto<String>("connection", frame.username);
 					ClientSender.getInstance().send(requestBodyDto);
 					
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -110,7 +111,7 @@ public class SimpleGUIClient extends JFrame {
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 446, 639);
 		
 		mainCardLayout = new CardLayout();
 		mainCardJPanel = new JPanel();
@@ -147,6 +148,9 @@ public class SimpleGUIClient extends JFrame {
 				
 				RequestBodyDto<String> requestBodyDto = new RequestBodyDto<String>("createRoom", roomName);
 				ClientSender.getInstance().send(requestBodyDto);
+				mainCardLayout.show(mainCardJPanel, "chattingRoomPanel");
+				requestBodyDto = new RequestBodyDto<String>("join", roomName);
+				ClientSender.getInstance().send(requestBodyDto);
 			}
 		});
 		chattingRoomListPanel.add(createRoomButton);
@@ -159,6 +163,18 @@ public class SimpleGUIClient extends JFrame {
 		
 		roomListModel = new DefaultListModel<String>();
 		roomList = new JList(roomListModel);
+		roomList.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(e.getClickCount() == 2 ) { // getClickCount() 클릭 수 확인
+					String roomName = roomListModel.get(roomList.getSelectedIndex());
+					mainCardLayout.show(mainCardJPanel, "chattingRoomPanel"); 
+					
+					RequestBodyDto<String> requestBodyDto = new RequestBodyDto<String>("join", roomName);
+					ClientSender.getInstance().send(requestBodyDto);
+				}
+			}
+		});
 		roomListScrollPanel.setViewportView(roomList);
 		
 		
@@ -166,10 +182,10 @@ public class SimpleGUIClient extends JFrame {
 		chattingRoomPanel = new JPanel();
 		chattingRoomPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		chattingRoomPanel.setLayout(null);
-		mainCardJPanel.add(chattingRoomPanel, "contentPane");
+		mainCardJPanel.add(chattingRoomPanel, "chattingRoomPanel");
 		
 		JScrollPane chattingTextAreaScrollPane = new JScrollPane();
-		chattingTextAreaScrollPane.setBounds(12, 10, 284, 191);
+		chattingTextAreaScrollPane.setBounds(12, 10, 250, 500);
 		chattingRoomPanel.add(chattingTextAreaScrollPane);
 		
 		chattingTextArea = new JTextArea(); // JTextArea textArea = new JTextArea(); 지역 변수로 되어 있는 것을 위에 멤버변수로 빼둠
@@ -195,7 +211,7 @@ public class SimpleGUIClient extends JFrame {
 				}
 			}
 		});
-		messageTextField.setBounds(12, 211, 412, 40);
+		messageTextField.setBounds(12, 550, 412, 40);
 		chattingRoomPanel.add(messageTextField);
 		
 		userListScrollPane = new JScrollPane();
@@ -206,7 +222,8 @@ public class SimpleGUIClient extends JFrame {
 		userList = new JList(userListModel);
 		userListScrollPane.setViewportView(userList); // List 관리
 		
-		
+		///   /////     ////   ////   /////// /////
+		///
 		
 		
 		
